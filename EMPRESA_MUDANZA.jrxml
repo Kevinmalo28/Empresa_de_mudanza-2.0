@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EMPRESA_MUDANZA" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="adb34829-6a9e-4934-9f13-d0bbd178d48a">
+	<property name="ireport.zoom" value="1.6500000000000032"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     clientes."id_clientes" AS clientes_id_clientes,
+     clientes."id_empresa_matriz" AS clientes_id_empresa_matriz,
+     clientes."id_sucursales" AS clientes_id_sucursales,
+     clientes."id_asesores" AS clientes_id_asesores,
+     clientes."nombre" AS clientes_nombre,
+     clientes."apellido" AS clientes_apellido,
+     clientes."uso_de_servicios_de_la_empresa" AS clientes_uso_de_servicios_de_la_empresa,
+     asesores."id_asesores" AS asesores_id_asesores,
+     asesores."id_empresa_matriz" AS asesores_id_empresa_matriz,
+     asesores."id_sucursales" AS asesores_id_sucursales,
+     asesores."fecha_ingreso" AS asesores_fecha_ingreso,
+     asesores."ingreso" AS asesores_ingreso,
+     sucursales."id_sucursales" AS sucursales_id_sucursales,
+     sucursales."id_empresa_matriz" AS sucursales_id_empresa_matriz,
+     sucursales."asesores_sucursal" AS sucursales_asesores_sucursal,
+     sucursales."ciudad_sucursal" AS sucursales_ciudad_sucursal,
+     asesores."nombre" AS asesores_nombre,
+     asesores."apellido" AS asesores_apellido
+FROM
+     "public"."clientes" clientes INNER JOIN "public"."asesores" asesores ON clientes."id_asesores" = asesores."id_asesores"
+     INNER JOIN "public"."sucursales" sucursales ON asesores."id_sucursales" = sucursales."id_sucursales"
+     AND sucursales."id_sucursales" = clientes."id_sucursales"]]>
+	</queryString>
+	<field name="clientes_id_clientes" class="java.lang.Integer"/>
+	<field name="clientes_id_empresa_matriz" class="java.lang.Integer"/>
+	<field name="clientes_id_sucursales" class="java.lang.Integer"/>
+	<field name="clientes_id_asesores" class="java.lang.Integer"/>
+	<field name="clientes_nombre" class="java.lang.String"/>
+	<field name="clientes_apellido" class="java.lang.String"/>
+	<field name="clientes_uso_de_servicios_de_la_empresa" class="java.lang.String"/>
+	<field name="asesores_id_asesores" class="java.lang.Integer"/>
+	<field name="asesores_id_empresa_matriz" class="java.lang.Integer"/>
+	<field name="asesores_id_sucursales" class="java.lang.Integer"/>
+	<field name="asesores_fecha_ingreso" class="java.sql.Date"/>
+	<field name="asesores_ingreso" class="java.math.BigDecimal"/>
+	<field name="sucursales_id_sucursales" class="java.lang.Integer"/>
+	<field name="sucursales_id_empresa_matriz" class="java.lang.Integer"/>
+	<field name="sucursales_asesores_sucursal" class="java.lang.String"/>
+	<field name="sucursales_ciudad_sucursal" class="java.lang.String"/>
+	<field name="asesores_nombre" class="java.lang.String"/>
+	<field name="asesores_apellido" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="71" splitType="Stretch">
+			<staticText>
+				<reportElement x="142" y="0" width="252" height="20" uuid="db776409-65e4-423a-a7c8-1f342f1bf91c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Universidad Laica Eloy Akfaro de Manabí]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="142" y="20" width="252" height="20" uuid="03c53adf-186a-4bce-9d57-02179e370de7"/>
+				<textElement textAlignment="Center">
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Facultad de Ciencias Informaticas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="142" y="40" width="252" height="20" uuid="21c8e319-e547-4dc7-96b7-15513c0efa9f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Georgia" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tecnología de la Informacion ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement x="57" y="1" width="42" height="20" uuid="004ed426-4a35-4f15-97b8-c3a1eb12d971"/>
+				<textElement>
+					<font fontName="Georgia" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="99" y="1" width="134" height="20" uuid="0f6161be-39b1-442b-8c02-fbdab260029f"/>
+				<textElement>
+					<font fontName="Georgia"/>
+				</textElement>
+				<text><![CDATA[Macías Loor Kevin Fernando]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="57" y="21" width="42" height="20" uuid="0d50198d-2ea4-43c8-8764-3a21d3d4f000"/>
+				<textElement>
+					<font fontName="Georgia" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Curso:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="99" y="21" width="100" height="20" uuid="f193c5b6-2bda-4049-83c4-4b45244805ab"/>
+				<textElement>
+					<font fontName="Georgia"/>
+				</textElement>
+				<text><![CDATA[5to Nivel "A"]]></text>
+			</staticText>
+			<image>
+				<reportElement x="311" y="0" width="188" height="46" uuid="070ba20a-58c8-46fd-a222-6f6bf5115281"/>
+				<imageExpression><![CDATA["C:\\Users\\COMPU-TEACH\\OneDrive - ULEAM\\Uleam - Materias\\logo_ULEAM_2017_horizontal.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="57" y="41" width="42" height="20" uuid="f864e624-fbb3-424e-bdb7-0497165e7020"/>
+				<textElement>
+					<font fontName="Georgia" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Materia:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="99" y="41" width="134" height="20" uuid="2fe8d0e1-38b0-4b50-a627-d9e4728ae103"/>
+				<textElement>
+					<font fontName="Georgia"/>
+				</textElement>
+				<text><![CDATA[Gestión de Bases de Datos]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="399" y="1" width="100" height="20" uuid="f4562116-705f-4224-aed8-ef350355225d"/>
+				<textElement>
+					<font fontName="Georgia" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ingresos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="1" width="100" height="20" uuid="a06ac143-fad7-43c3-8aae-0c0452acd376"/>
+				<textElement>
+					<font fontName="Georgia" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Año]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="53" y="1" width="100" height="20" uuid="13de506e-17a3-4b55-aa9f-136b574e9feb"/>
+				<textElement>
+					<font fontName="Georgia" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cuidad de Sucursal]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="399" y="16" width="100" height="20" uuid="14b9820e-316d-43da-bc3b-2a74a0c9a9ab"/>
+				<textElement>
+					<font fontName="Georgia"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{asesores_ingreso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="9" width="135" height="20" uuid="f42d9444-8b02-4afc-bcb7-9292cd68d003"/>
+				<textElement>
+					<font fontName="Georgia"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{asesores_fecha_ingreso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="53" y="16" width="100" height="20" uuid="f56e8827-810a-4820-8e4c-99a190db6e99"/>
+				<textElement>
+					<font fontName="Georgia"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sucursales_ciudad_sucursal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="224" splitType="Stretch">
+			<stackedBar3DChart>
+				<chart>
+					<reportElement x="53" y="18" width="446" height="206" uuid="816d389c-69af-4296-b310-65631f7ed73c"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Ingresos por Año"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{asesores_fecha_ingreso}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{asesores_ingreso}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<bar3DPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</bar3DPlot>
+			</stackedBar3DChart>
+			<line>
+				<reportElement x="53" y="0" width="446" height="1" uuid="4d752fa5-ccbf-4a9f-ba33-318cc15fbf57"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>
