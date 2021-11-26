@@ -1,4 +1,4 @@
---Un procedimiento almacenado que para que un asesor que se le ingrese, devuelva todos los artículos prestados por la empresa en su trabajo.
+--Un proceso almacenado que muestre los datos del cliente con los objetos de la mudanza por lo cual ha requerido los servicios de la empresa
 --proceso almacenado
 create or replace function mudanza(int)
 returns  varchar as $$ DECLARE 
